@@ -1,0 +1,3 @@
+-La url aparece todos los datos cuando no quiero eso
+-No me permite realizar busqueda
+-Como podria realizar la busqueda con AJAX para que apareciera esa busqueda sin actualizar pantalla
