@@ -1,0 +1,26 @@
+create table facturas(Id_factura integer auto_increment, factura varchar(30), Proveedor varchar(30), Precio varchar(20), primary key (Id_factura));
+
+Create table mantenimiento(Id_mantenimiento integer auto_increment, limpiar varchar(4), empacar varchar(4), cargador varchar(4), etiqueta varchar(4), 
+primary key(Id_mantenimiento));
+
+Create table datos_envios(Id_datos_en integer auto_increment, fecha_llegada date, fecha_envio date, fecha_recepcion date, correo varchar(4), registro date, 
+primary key (Id_datos_en));
+
+Create table datos_equipos(Id_datos_eq integer auto_increment, modelo varchar(50), ram varchar(40), hd varchar(30), procesador varchar(30), so varchar(20), 
+serie varchar(30), otro varchar (30), primary key(Id_datos_eq));
+
+Create table programa(Id_programa integer auto_increment, nombre varchar(30), primary key(Id_programa));
+
+Create table configuraciones(Id_configuracion integer auto_increment, nombre varchar(30), product_key varchar(30), primary key(Id_configuracion));
+
+Create table vnc(Id_vnc integer auto_increment, nombre varchar(30), tipo varchar(10), primary key(Id_vnc));
+
+Create table agregado(Id_agregado integer auto_increment, nombre varchar(30), primary key(Id_agregado));
+
+create table Equipos(Id_equipo integer auto_increment, nombre varchar(80), asignacion varchar(80), 
+caracteristica varchar(15), tipo varchar(15), sucof varchar(30), Id_programa integer, Id_configuracion integer, 
+Id_datos_eq integer, Id_datos_en integer, Id_mantenimiento integer, Id_factura integer, comentario varchar(100), 
+respaldos varchar(100), contraseña varchar(25), primary key (Id_equipo), FOREIGN KEY (Id_datos_eq) REFERENCES datos_equipos(Id_datos_eq), 
+FOREIGN KEY (Id_datos_en) REFERENCES datos_envios(Id_datos_en), FOREIGN KEY(Id_programa) REFERENCES 
+programa(Id_programa), FOREIGN KEY (Id_configuracion) REFERENCES configuraciones(Id_configuracion), FOREIGN KEY 
+(Id_mantenimiento) REFERENCES mantenimiento(Id_mantenimiento), FOREIGN KEY(Id_factura)REFERENCES facturas(Id_factura));
