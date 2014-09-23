@@ -7,7 +7,7 @@
     <class>com.barmex.checklist.DatosEquipos</class>
     <class>com.barmex.checklist.Facturas</class>
     <class>com.barmex.checklist.Mantenimientos</class>
-    <class>com.barmex.checklist.Agregados</class>
+  
     <class>com.barmex.checklist.Vncs</class>
     <class>com.barmex.checklist.Equip</class>
     <class>com.barmex.checklist.Configuraciones</class>

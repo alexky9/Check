@@ -649,7 +649,7 @@ $("#Guardar").click(function(){
     $.ajax({
         
         method:'POST',
-        url:"http://localhost:8095/CheckList/agregar/equipo/",
+        url:"http://localhost:8095/CheckList/agregar/equipo",
         
         success:function(valor){
            
@@ -673,9 +673,9 @@ $("#Guardar").click(function(){
                 this.checked = false;
             }
          
-     }       
+     };       
              
   </script>
-    </form>
+    
 </body>
 </html>
