@@ -6,7 +6,7 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull [root on Default schema]</property>
     <mapping class="com.barmex.checklist.Equipos"/>
-    <mapping class="com.barmex.checklist.Agregados"/>
+    
     <mapping class="com.barmex.checklist.Configuraciones"/>
     <mapping class="com.barmex.checklist.DatosEnvios"/>
     <mapping class="com.barmex.checklist.DatosEquipos"/>
