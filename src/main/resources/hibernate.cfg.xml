@@ -10,7 +10,7 @@
     <mapping class="com.barmex.checklist.Configuraciones"/>
     <mapping class="com.barmex.checklist.DatosEnvios"/>
     <mapping class="com.barmex.checklist.DatosEquipos"/>
-    <mapping class="com.barmex.checklist.Mantenimientos"/>
+    <mapping class="com.barmex.checklist.Mantenimiento"/>
     <mapping class="com.barmex.checklist.Programas"/>
     <mapping class="com.barmex.checklist.Vncs"/>
     <mapping class="com.barmex.checklist.Facturas"/>
