@@ -11,7 +11,7 @@
     <mapping class="com.barmex.checklist.DatosEnvios"/>
     <mapping class="com.barmex.checklist.DatosEquipos"/>
     <mapping class="com.barmex.checklist.Mantenimiento"/>
-    <mapping class="com.barmex.checklist.Programas"/>
+    <mapping class="com.barmex.checklist.Programa"/>
     <mapping class="com.barmex.checklist.Vncs"/>
     <mapping class="com.barmex.checklist.Facturas"/>
   </session-factory>
