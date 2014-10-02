@@ -4,15 +4,17 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull [root on Default schema]</property>
-    <mapping class="com.barmex.checklist.Equipos"/>
-    
+    <property name="hibernate.connection.url">jdbc:mysql://192.168.10.250:3306/barmex_1</property>
+    <property name="hibernate.connection.username">barpro</property>
+    <property name="hibernate.connection.password">barpro</property>
+    <mapping class="com.barmex.checklist.Equipo"/>
     <mapping class="com.barmex.checklist.Configuraciones"/>
-    <mapping class="com.barmex.checklist.DatosEnvios"/>
-    <mapping class="com.barmex.checklist.DatosEquipos"/>
+    <mapping class="com.barmex.checklist.DatosEnvio"/>
+    <mapping class="com.barmex.checklist.DatosEquipo"/>
     <mapping class="com.barmex.checklist.Mantenimiento"/>
     <mapping class="com.barmex.checklist.Programa"/>
-    <mapping class="com.barmex.checklist.Vncs"/>
-    <mapping class="com.barmex.checklist.Facturas"/>
+    <mapping class="com.barmex.checklist.Vnc"/>
+    <mapping class="com.barmex.checklist.Factur"/>
+    <mapping class="com.barmex.checklist.Agregado"/>
   </session-factory>
 </hibernate-configuration>

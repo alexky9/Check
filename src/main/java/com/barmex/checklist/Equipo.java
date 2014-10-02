@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.barmex.checklist;
 
 import java.io.Serializable;
@@ -15,11 +19,15 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+/**
+ *
+ * @author Alejandro Pacheco
+ */
 @Entity
-@Table(name = "equipos")
+@Table(name = "equipo")
 @NamedQueries({
-    @NamedQuery(name = "Equipos.findAll", query = "SELECT e FROM Equipos e")})
-public class Equipos implements Serializable {
+    @NamedQuery(name = "Equipo.findAll", query = "SELECT e FROM Equipo e")})
+public class Equipo implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,14 +56,17 @@ public class Equipos implements Serializable {
     @Column(name = "respaldos")
     private String respaldos;
     @Size(max = 25)
-    @Column(name = "contraseña")
+    @Column(name = "contrase\u00f1a")
     private String contraseña;
+    @Size(max = 30)
+    @Column(name = "productkey")
+    private String productkey;
     @JoinColumn(name = "Id_datos_eq", referencedColumnName = "Id_datos_eq")
     @ManyToOne
-    private DatosEquipos datosEquipos;
+    private DatosEquipo datosEquipo;
     @JoinColumn(name = "Id_datos_en", referencedColumnName = "Id_datos_en")
     @ManyToOne
-    private DatosEnvios datosEnvios;
+    private DatosEnvio datosEnvio;
     @JoinColumn(name = "Id_programa", referencedColumnName = "Id_programa")
     @ManyToOne
     private Programa programa;
@@ -65,14 +76,20 @@ public class Equipos implements Serializable {
     @JoinColumn(name = "Id_mantenimiento", referencedColumnName = "Id_mantenimiento")
     @ManyToOne
     private Mantenimiento mantenimiento;
-    @JoinColumn(name = "Id_factura", referencedColumnName = "Id_factura")
+    @JoinColumn(name = "Id_factur", referencedColumnName = "Id_factur")
     @ManyToOne
-    private Facturas facturas;
+    private Factur factur;
+    @JoinColumn(name = "Id_vnc", referencedColumnName = "Id_vnc")
+    @ManyToOne
+    private Vnc vnc;
+    @JoinColumn(name = "Id_agregado", referencedColumnName = "Id_agregado")
+    @ManyToOne
+    private Agregado agregado;
 
-    public Equipos() {
+    public Equipo() {
     }
 
-    public Equipos(Integer idequipo, String nombre, String asignacion, String caracteristica, String tipo, String sucof, String comentario, String respaldos, String contraseña, DatosEquipos datosEquipos, DatosEnvios datosEnvios, Programa programa, Configuraciones configuraciones, Mantenimiento mantenimiento, Facturas facturas) {
+    public Equipo(Integer idequipo, String nombre, String asignacion, String caracteristica, String tipo, String sucof, String comentario, String respaldos, String contraseña, String productkey, DatosEquipo datosEquipo, DatosEnvio datosEnvio, Programa programa, Configuraciones configuraciones, Mantenimiento mantenimiento, Factur factur, Vnc vnc, Agregado agregado) {
         this.idequipo = idequipo;
         this.nombre = nombre;
         this.asignacion = asignacion;
@@ -82,15 +99,18 @@ public class Equipos implements Serializable {
         this.comentario = comentario;
         this.respaldos = respaldos;
         this.contraseña = contraseña;
-        this.datosEquipos = datosEquipos;
-        this.datosEnvios = datosEnvios;
+        this.productkey = productkey;
+        this.datosEquipo = datosEquipo;
+        this.datosEnvio = datosEnvio;
         this.programa = programa;
         this.configuraciones = configuraciones;
         this.mantenimiento = mantenimiento;
-        this.facturas = facturas;
+        this.factur = factur;
+        this.vnc = vnc;
+        this.agregado = agregado;
     }
 
-    public Equipos(Integer idequipo) {
+    public Equipo(Integer idequipo) {
         this.idequipo = idequipo;
     }
 
@@ -166,20 +186,28 @@ public class Equipos implements Serializable {
         this.contraseña = contraseña;
     }
 
-    public DatosEquipos getDatosEquipos() {
-        return datosEquipos;
+    public String getProductkey() {
+        return productkey;
     }
 
-    public void setDatosEquipos(DatosEquipos datosEquipos) {
-        this.datosEquipos = datosEquipos;
+    public void setProductkey(String productkey) {
+        this.productkey = productkey;
     }
 
-    public DatosEnvios getDatosEnvios() {
-        return datosEnvios;
+    public DatosEquipo getDatosEquipo() {
+        return datosEquipo;
     }
 
-    public void setDatosEnvios(DatosEnvios datosEnvios) {
-        this.datosEnvios = datosEnvios;
+    public void setDatosEquipo(DatosEquipo datosEquipo) {
+        this.datosEquipo = datosEquipo;
+    }
+
+    public DatosEnvio getDatosEnvio() {
+        return datosEnvio;
+    }
+
+    public void setDatosEnvio(DatosEnvio datosEnvio) {
+        this.datosEnvio = datosEnvio;
     }
 
     public Programa getPrograma() {
@@ -206,12 +234,28 @@ public class Equipos implements Serializable {
         this.mantenimiento = mantenimiento;
     }
 
-    public Facturas getFacturas() {
-        return facturas;
+    public Factur getFactur() {
+        return factur;
     }
 
-    public void setFacturas(Facturas facturas) {
-        this.facturas = facturas;
+    public void setFactur(Factur factur) {
+        this.factur = factur;
+    }
+
+    public Vnc getVnc() {
+        return vnc;
+    }
+
+    public void setVnc(Vnc vnc) {
+        this.vnc = vnc;
+    }
+
+    public Agregado getAgregado() {
+        return agregado;
+    }
+
+    public void setAgregado(Agregado agregado) {
+        this.agregado = agregado;
     }
 
     @Override
@@ -224,10 +268,10 @@ public class Equipos implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Equipos)) {
+        if (!(object instanceof Equipo)) {
             return false;
         }
-        Equipos other = (Equipos) object;
+        Equipo other = (Equipo) object;
         if ((this.idequipo == null && other.idequipo != null) || (this.idequipo != null && !this.idequipo.equals(other.idequipo))) {
             return false;
         }
@@ -236,7 +280,7 @@ public class Equipos implements Serializable {
 
     @Override
     public String toString() {
-        return "com.barmex.checklist.Equipos[ idequipo=" + idequipo + " ]";
+        return "com.barmex.checklist.Equipo[ idequipo=" + idequipo + " ]";
     }
     
 }

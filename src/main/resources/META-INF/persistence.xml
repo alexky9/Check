@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="com.barmex_CheckList_war_1.0PU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>com.barmex.checklist.Programas</class>
-    <class>com.barmex.checklist.DatosEnvios</class>
-    <class>com.barmex.checklist.DatosEquipos</class>
-    <class>com.barmex.checklist.Facturas</class>
-    <class>com.barmex.checklist.Mantenimientos</class>
-  
-    <class>com.barmex.checklist.Vncs</class>
-    <class>com.barmex.checklist.Equip</class>
-    <class>com.barmex.checklist.Configuraciones</class>
-    <class>com.barmex.checklist.Equipos</class>
-    <class>com.barmex.checklist.Config</class>
-    <class>com.barmex.checklist.Programa</class>
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>com.barmex.checklist.Equipo</class>
     <class>com.barmex.checklist.Vnc</class>
+    <class>com.barmex.checklist.Factur</class>
+    <class>com.barmex.checklist.DatosEquipo</class>
+    <class>com.barmex.checklist.DatosEnvio</class>
     <class>com.barmex.checklist.Mantenimiento</class>
     <class>com.barmex.checklist.Agregado</class>
+    <class>com.barmex.checklist.Programa</class>
+    <class>com.barmex.checklist.Configuraciones</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mysql"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.10.250:3306/barmex_1"/>
+      <property name="javax.persistence.jdbc.user" value="barpro"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="javax.persistence.jdbc.password" value="barpro"/>
     </properties>
   </persistence-unit>
 </persistence>

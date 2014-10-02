@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.barmex.checklist;
 
 import java.io.Serializable;
@@ -15,6 +19,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+/**
+ *
+ * @author Alejandro Pacheco
+ */
 @Entity
 @Table(name = "configuraciones")
 @NamedQueries({
@@ -29,24 +37,20 @@ public class Configuraciones implements Serializable {
     @Size(max = 30)
     @Column(name = "nombre")
     private String nombre;
-    @Size(max = 30)
-    @Column(name = "product_key")
-    private String productKey;
     @OneToMany(mappedBy = "configuraciones")
-    private List<Equipos> equiposList;
+    private List<Equipo> equipoList;
 
     public Configuraciones() {
     }
 
-    public Configuraciones(Integer idconfiguracion, String nombre, String productKey, List<Equipos> equiposList) {
-        this.idconfiguracion = idconfiguracion;
-        this.nombre = nombre;
-        this.productKey = productKey;
-        this.equiposList = equiposList;
-    }
-
     public Configuraciones(Integer idconfiguracion) {
         this.idconfiguracion = idconfiguracion;
+    }
+
+    public Configuraciones(Integer idconfiguracion, String nombre, List<Equipo> equipoList) {
+        this.idconfiguracion = idconfiguracion;
+        this.nombre = nombre;
+        this.equipoList = equipoList;
     }
 
     public Integer getIdconfiguracion() {
@@ -65,20 +69,12 @@ public class Configuraciones implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getProductKey() {
-        return productKey;
+    public List<Equipo> getEquipoList() {
+        return equipoList;
     }
 
-    public void setProductKey(String productKey) {
-        this.productKey = productKey;
-    }
-
-    public List<Equipos> getEquiposList() {
-        return equiposList;
-    }
-
-    public void setEquiposList(List<Equipos> equiposList) {
-        this.equiposList = equiposList;
+    public void setEquipoList(List<Equipo> equipoList) {
+        this.equipoList = equipoList;
     }
 
     @Override

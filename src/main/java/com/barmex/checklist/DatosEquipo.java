@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.barmex.checklist;
 
 import java.io.Serializable;
@@ -15,11 +19,15 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+/**
+ *
+ * @author Alejandro Pacheco
+ */
 @Entity
-@Table(name = "datos_equipos")
+@Table(name = "datos_equipo")
 @NamedQueries({
-    @NamedQuery(name = "DatosEquipos.findAll", query = "SELECT d FROM DatosEquipos d")})
-public class DatosEquipos implements Serializable {
+    @NamedQuery(name = "DatosEquipo.findAll", query = "SELECT d FROM DatosEquipo d")})
+public class DatosEquipo implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,13 +55,13 @@ public class DatosEquipos implements Serializable {
     @Size(max = 30)
     @Column(name = "otro")
     private String otro;
-    @OneToMany(mappedBy = "datosEquipos")
-    private List<Equipos> equiposList;
+    @OneToMany(mappedBy = "datosEquipo")
+    private List<Equipo> equipoList;
 
-    public DatosEquipos() {
+    public DatosEquipo() {
     }
 
-    public DatosEquipos(Integer iddatoseq, String modelo, String ram, String hd, String procesador, String so, String serie, String otro, List<Equipos> equiposList) {
+    public DatosEquipo(Integer iddatoseq, String modelo, String ram, String hd, String procesador, String so, String serie, String otro, List<Equipo> equipoList) {
         this.iddatoseq = iddatoseq;
         this.modelo = modelo;
         this.ram = ram;
@@ -62,10 +70,10 @@ public class DatosEquipos implements Serializable {
         this.so = so;
         this.serie = serie;
         this.otro = otro;
-        this.equiposList = equiposList;
+        this.equipoList = equipoList;
     }
 
-    public DatosEquipos(Integer iddatoseq) {
+    public DatosEquipo(Integer iddatoseq) {
         this.iddatoseq = iddatoseq;
     }
 
@@ -133,12 +141,12 @@ public class DatosEquipos implements Serializable {
         this.otro = otro;
     }
 
-    public List<Equipos> getEquiposList() {
-        return equiposList;
+    public List<Equipo> getEquipoList() {
+        return equipoList;
     }
 
-    public void setEquiposList(List<Equipos> equiposList) {
-        this.equiposList = equiposList;
+    public void setEquipoList(List<Equipo> equipoList) {
+        this.equipoList = equipoList;
     }
 
     @Override
@@ -151,10 +159,10 @@ public class DatosEquipos implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof DatosEquipos)) {
+        if (!(object instanceof DatosEquipo)) {
             return false;
         }
-        DatosEquipos other = (DatosEquipos) object;
+        DatosEquipo other = (DatosEquipo) object;
         if ((this.iddatoseq == null && other.iddatoseq != null) || (this.iddatoseq != null && !this.iddatoseq.equals(other.iddatoseq))) {
             return false;
         }
@@ -163,7 +171,7 @@ public class DatosEquipos implements Serializable {
 
     @Override
     public String toString() {
-        return "com.barmex.checklist.DatosEquipos[ iddatoseq=" + iddatoseq + " ]";
+        return "com.barmex.checklist.DatosEquipo[ iddatoseq=" + iddatoseq + " ]";
     }
     
 }

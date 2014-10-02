@@ -19,10 +19,10 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "datos_envios")
+@Table(name = "datos_envio")
 @NamedQueries({
-    @NamedQuery(name = "DatosEnvios.findAll", query = "SELECT d FROM DatosEnvios d")})
-public class DatosEnvios implements Serializable {
+    @NamedQuery(name = "DatosEnvio.findAll", query = "SELECT d FROM DatosEnvio d")})
+public class DatosEnvio implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,23 +44,23 @@ public class DatosEnvios implements Serializable {
     @Column(name = "registro")
     @Temporal(TemporalType.DATE)
     private Date registro;
-    @OneToMany(mappedBy = "datosEnvios")
-    private List<Equipos> equiposList;
+    @OneToMany(mappedBy = "datosEnvio")
+    private List<Equipo> equipoList;
 
-    public DatosEnvios() {
+    public DatosEnvio() {
     }
 
-    public DatosEnvios(Integer iddatosen, Date fechaLlegada, Date fechaEnvio, Date fechaRecepcion, String correo, Date registro, List<Equipos> equiposList) {
+    public DatosEnvio(Integer iddatosen, Date fechaLlegada, Date fechaEnvio, Date fechaRecepcion, String correo, Date registro, List<Equipo> equipoList) {
         this.iddatosen = iddatosen;
         this.fechaLlegada = fechaLlegada;
         this.fechaEnvio = fechaEnvio;
         this.fechaRecepcion = fechaRecepcion;
         this.correo = correo;
         this.registro = registro;
-        this.equiposList = equiposList;
+        this.equipoList = equipoList;
     }
 
-    public DatosEnvios(Integer iddatosen) {
+    public DatosEnvio(Integer iddatosen) {
         this.iddatosen = iddatosen;
     }
 
@@ -112,12 +112,12 @@ public class DatosEnvios implements Serializable {
         this.registro = registro;
     }
 
-    public List<Equipos> getEquiposList() {
-        return equiposList;
+    public List<Equipo> getEquipoList() {
+        return equipoList;
     }
 
-    public void setEquiposList(List<Equipos> equiposList) {
-        this.equiposList = equiposList;
+    public void setEquipoList(List<Equipo> equipoList) {
+        this.equipoList = equipoList;
     }
 
     @Override
@@ -130,10 +130,10 @@ public class DatosEnvios implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof DatosEnvios)) {
+        if (!(object instanceof DatosEnvio)) {
             return false;
         }
-        DatosEnvios other = (DatosEnvios) object;
+        DatosEnvio other = (DatosEnvio) object;
         if ((this.iddatosen == null && other.iddatosen != null) || (this.iddatosen != null && !this.iddatosen.equals(other.iddatosen))) {
             return false;
         }
@@ -142,7 +142,7 @@ public class DatosEnvios implements Serializable {
 
     @Override
     public String toString() {
-        return "com.barmex.checklist.DatosEnvios[ iddatosen=" + iddatosen + " ]";
+        return "com.barmex.checklist.DatosEnvio[ iddatosen=" + iddatosen + " ]";
     }
     
 }

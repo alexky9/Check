@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.barmex.checklist;
 
 import java.io.Serializable;
@@ -15,6 +19,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+/**
+ *
+ * @author Alejandro Pacheco
+ */
 @Entity
 @Table(name = "mantenimiento")
 @NamedQueries({
@@ -39,18 +47,18 @@ public class Mantenimiento implements Serializable {
     @Column(name = "etiqueta")
     private String etiqueta;
     @OneToMany(mappedBy = "mantenimiento")
-    private List<Equipos> equiposList;
+    private List<Equipo> equipoList;
 
     public Mantenimiento() {
     }
 
-    public Mantenimiento(Integer idmantenimiento, String limpiar, String empacar, String cargador, String etiqueta, List<Equipos> equiposList) {
+    public Mantenimiento(Integer idmantenimiento, String limpiar, String empacar, String cargador, String etiqueta, List<Equipo> equipoList) {
         this.idmantenimiento = idmantenimiento;
         this.limpiar = limpiar;
         this.empacar = empacar;
         this.cargador = cargador;
         this.etiqueta = etiqueta;
-        this.equiposList = equiposList;
+        this.equipoList = equipoList;
     }
 
     public Mantenimiento(Integer idmantenimiento) {
@@ -97,12 +105,12 @@ public class Mantenimiento implements Serializable {
         this.etiqueta = etiqueta;
     }
 
-    public List<Equipos> getEquiposList() {
-        return equiposList;
+    public List<Equipo> getEquipoList() {
+        return equipoList;
     }
 
-    public void setEquiposList(List<Equipos> equiposList) {
-        this.equiposList = equiposList;
+    public void setEquipoList(List<Equipo> equipoList) {
+        this.equipoList = equipoList;
     }
 
     @Override

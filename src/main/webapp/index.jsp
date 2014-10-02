@@ -3,17 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link href="../Documents/NetBeansProjects/CheckList/src/main/webapp/path/to/multiselect.css" media="screen" rel="stylesheet" type="text/css">
-<link href="../Documents/NetBeansProjects/CheckList/src/main/webapp/SpryAssets/SpryValidationCheckbox.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-.s {
-	font-family: "Lucida Console", Monaco, monospace;
-	font-size: 12px;
-}
 
 </style>
 </head>
   <body>
-      <form name="new_check" action="" onsubmit="agregarequipo(); return false">
+      <form name="new_check" action="" method="POST" return false">
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" id="new_check"/>
 <title>Checklist</title>
 <style type="text/css">
@@ -640,7 +634,7 @@ $("#Guardar").click(function(){
     //var recibo=$("#Fecha_ll2").val();
     //var correo_en=$("#Correo").val();
     //var inventario=$("#Reg inv").val();
-    //var programa=$("#programa").val();
+    //var programa=$("#programa").val();w
     //var configuracion=$("#configuracion").val();
     //var factura=$("#nombre_fac").val();
     //var Proveedor=$("#proveedor").val();
@@ -649,7 +643,7 @@ $("#Guardar").click(function(){
     $.ajax({
         
         method:'POST',
-        url:"http://localhost:8095/CheckList/agregar/equipo",
+        url:"http://localhost:8095/CheckList/agregar/equipo/",
         
         success:function(valor){
            
@@ -663,15 +657,6 @@ $("#Guardar").click(function(){
 });
 
      $("#Limpiar").click(function(){
-         
-          switch(this.type) {
-            case 'nombre':
-            case 'asignado':
-                $(this).val('');
-                break;
-            case 'checkbox':
-                this.checked = false;
-            }
          
      };       
              

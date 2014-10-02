@@ -1,5 +1,4 @@
 
-
 package com.barmex.checklist;
 
 import java.io.Serializable;
@@ -31,15 +30,15 @@ public class Programa implements Serializable {
     @Column(name = "nombre")
     private String nombre;
     @OneToMany(mappedBy = "programa")
-    private List<Equipos> equiposList;
+    private List<Equipo> equipoList;
 
     public Programa() {
     }
 
-    public Programa(Integer idprograma, String nombre, List<Equipos> equiposList) {
+    public Programa(Integer idprograma, String nombre, List<Equipo> equipoList) {
         this.idprograma = idprograma;
         this.nombre = nombre;
-        this.equiposList = equiposList;
+        this.equipoList = equipoList;
     }
 
     public Programa(Integer idprograma) {
@@ -62,12 +61,12 @@ public class Programa implements Serializable {
         this.nombre = nombre;
     }
 
-    public List<Equipos> getEquiposList() {
-        return equiposList;
+    public List<Equipo> getEquipoList() {
+        return equipoList;
     }
 
-    public void setEquiposList(List<Equipos> equiposList) {
-        this.equiposList = equiposList;
+    public void setEquipoList(List<Equipo> equipoList) {
+        this.equipoList = equipoList;
     }
 
     @Override

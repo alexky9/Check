@@ -1,7 +1,12 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.barmex.checklist;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,9 +15,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+/**
+ *
+ * @author Alejandro Pacheco
+ */
 @Entity
 @Table(name = "agregado")
 @NamedQueries({
@@ -27,13 +37,16 @@ public class Agregado implements Serializable {
     @Size(max = 30)
     @Column(name = "nombre")
     private String nombre;
+    @OneToMany(mappedBy = "agregado")
+    private List<Equipo> equipoList;
 
     public Agregado() {
     }
 
-    public Agregado(Integer idagregado, String nombre) {
+    public Agregado(Integer idagregado, String nombre, List<Equipo> equipoList) {
         this.idagregado = idagregado;
         this.nombre = nombre;
+        this.equipoList = equipoList;
     }
 
     public Agregado(Integer idagregado) {
@@ -54,6 +67,14 @@ public class Agregado implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public List<Equipo> getEquipoList() {
+        return equipoList;
+    }
+
+    public void setEquipoList(List<Equipo> equipoList) {
+        this.equipoList = equipoList;
     }
 
     @Override
