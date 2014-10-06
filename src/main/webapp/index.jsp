@@ -3,12 +3,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link href="../Documents/NetBeansProjects/CheckList/src/main/webapp/path/to/multiselect.css" media="screen" rel="stylesheet" type="text/css">
+<style type="text/css">
+.s {
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 12px;
+}
+.container .content table tr td fieldset table tr th {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+}
+
+.container .content table tr td fieldset table tr td {
+	font-size: 12px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: bold;
+}
 
 </style>
 </head>
   <body>
-      <form name="new_check" action="" method="POST" return false">
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" id="new_check"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Checklist</title>
 <style type="text/css">
 <!--
@@ -120,11 +134,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
     <ul class="nav">
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-  
       <li><a href="#" onClick="location.href = 'busqueda.jsp' ">Buscar CheckList</a></li>
     </ul>
     <p>&nbsp;</p>
-</div>
+  </div>
   <div class="content">
     <table width="875" border="0">
       <tr>
@@ -194,8 +207,9 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
       <tr>
         <th scope="row">&nbsp;</th>
         <td>Sucursal/Oficina:</td>
-        <td colspan="5"><input name="sucof" type="text" id="sucof" size="40" /></td>
-        <td colspan="2">&nbsp;</td>
+        <td colspan="4"><input name="sucof" type="text" id="sucof" size="40" /></td>
+        <td colspan="3">Product Key
+        <input name="Product key" type="text" id="Product key" size="35" /></td>
       </tr>
       <tr>
         <th scope="row">&nbsp;</th>
@@ -350,7 +364,16 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
               <td><input type="checkbox" name="Winrar" id="Winrar" />
                 Winrar</td>
               <td>&nbsp;</td>
-              <td colspan="6">&nbsp;</td>
+              <td>
+                <input type="checkbox" name="Chrome" id="Chrome" />
+                <label for="Chrome">Chrome</label>
+              </form></td>
+              <td>&nbsp;</td>
+              <td><input type="checkbox" name="Paper port" id="Paper port" />
+                Paper port</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
             </tr>
             <tr>
               <th height="21" colspan="3" scope="row">Otro:
@@ -363,7 +386,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
                 <input type="text" name="id_team" id="id_team" /></th>
               </tr>
             <tr>
-              <td rowspan="2"><select name="Compresor2" id="nom_vnc">
+              <td rowspan="2"><select name="Compresor2">
                 <option value="0">selecciona VNC</option>
                 <option value="VNC">VNC</option>
                 <option value="Tight VNC">Tight VNC</option>
@@ -422,21 +445,21 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
         <th scope="row">&nbsp;</th>
         <td colspan="9"><fieldset>
           <legend>Configuracion:</legend>
-          <table width="695" height="183" border="0">
+          <table width="815" height="183" border="0">
             <tr>
-              <th width="158" scope="row">
+              <th width="167" scope="row">
                 <input type="checkbox" name="Diccionario de Lotus" id="Diccionario de Lotus" />
                 Diccionario de Lotus</span></th>
-              <td width="10">&nbsp;</td>
-              <td width="152">
+              <td width="17">&nbsp;</td>
+              <td width="150">
                 <input type="checkbox" name="Archivado de Lotus" id="Archivado de Lotus" />
                 Archivado de Lotus</td>
-              <td width="9">&nbsp;</td>
+              <td width="10">&nbsp;</td>
               <td colspan="2">
                 <input type="checkbox" name="Impresoras" id="Impresoras" />
                 Impresoras</td>
-              <td width="13">&nbsp;</td>
-              <td width="212">
+              <td width="3">&nbsp;</td>
+              <td width="217">
                 <input type="checkbox" name="Punto de restauracion" id="Punto de restauracion" />
                 Punto de restauracion</td>
             </tr>
@@ -477,22 +500,22 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
               <th rowspan="2" scope="row"><input type="checkbox" name="Drivers" id="Drivers" />
                 Drivers</th>
               <td rowspan="2">&nbsp;</td>
+              <td rowspan="2"><input type="checkbox" name="Base cotizaciones" id="Base cotizaciones" />
+                <label for="Base cotizaciones">Base cotizaciones</label></td>
               <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td colspan="2">&nbsp;</td>
+              <td colspan="2" rowspan="2"><input type="checkbox" name="Configuracion puertos lotus" id="Configuracion puertos lotus" />
+                <label for="Configuracion puertos lotus">Configuracion puertos lotus</label></td>
               <td rowspan="2">&nbsp;</td>
               <td rowspan="2"><input type="checkbox" name="Actualizacion y parches" id="Actualizacion y parches" />
 Actualizacion y parches</td>
             </tr>
             <tr>
               <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td colspan="2">&nbsp;</td>
-            </tr>
+              </tr>
             <tr>
+              <th colspan="2" scope="row"><input type="checkbox" name="Configuracion Sametime" id="Configuracion Sametime" />
+                <label for="Configuracion Sametime">Configuracion Sametime</label></th>
               <th scope="row">&nbsp;</th>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td colspan="4" rowspan="2"><fieldset>
                 <legend>Pertenece a: </legend>
@@ -515,8 +538,7 @@ Actualizacion y parches</td>
               </fieldset></td>
               </tr>
             <tr>
-              <th height="35" colspan="3" scope="row">Product Key
-                <input name="Product key" type="text" id="Product key" size="35" /></th>
+              <th height="35" colspan="3" scope="row">&nbsp;</th>
               <td>&nbsp;</td>
               </tr>
           </table>
@@ -608,7 +630,7 @@ Actualizacion y parches</td>
     <h1>&nbsp;</h1>
 </div>
 </div>
-    <script>
+<script>
 $("#Guardar").click(function(){
 
     //var nombre=$("#nombre").val();
@@ -647,20 +669,14 @@ $("#Guardar").click(function(){
         
         success:function(valor){
            
-            alert(e);
+            alert(valor);
             
         },
         failure:function(e){
             alert(e);
         }
     });
-});
-
-     $("#Limpiar").click(function(){
-         
-     };       
-             
+});          
   </script>
-    
 </body>
 </html>

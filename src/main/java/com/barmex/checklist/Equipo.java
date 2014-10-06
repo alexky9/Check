@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.barmex.checklist;
 
 import java.io.Serializable;
@@ -19,10 +15,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-/**
- *
- * @author Alejandro Pacheco
- */
 @Entity
 @Table(name = "equipo")
 @NamedQueries({
@@ -56,7 +48,7 @@ public class Equipo implements Serializable {
     @Column(name = "respaldos")
     private String respaldos;
     @Size(max = 25)
-    @Column(name = "contrase\u00f1a")
+    @Column(name = "contraseña")
     private String contraseña;
     @Size(max = 30)
     @Column(name = "productkey")
