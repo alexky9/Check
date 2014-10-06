@@ -27,40 +27,23 @@ public class Controlcheck {
                    @PathVariable String sucof,
                    @PathVariable String comentario,
                    @PathVariable String respaldos,
-                   @PathVariable String productkey,
-                   @PathVariable String modelo,
-                   @PathVariable String ram,
-                   @PathVariable String hd,
-                   @PathVariable String procesador,
-                   @PathVariable String so,
-                   @PathVariable String serie,
-                   @PathVariable String otro,
                    @PathVariable String contraseña,
-                   @PathVariable String fechaLlegada,
-                   @PathVariable String fechaEnvio,
-                   @PathVariable String fechaRecepcion,
-                   @PathVariable String correo,
-                   @PathVariable String registro,
-                   @PathVariable String limpiar,
-                   @PathVariable String empacar,
-                   @PathVariable String cargador,
-                   @PathVariable String etiqueta,
-                   @PathVariable String factura,
-                   @PathVariable String proveedor,
-                   @PathVariable String precio){
+                   @PathVariable String productkey,
+                   @PathVariable String Id_datos_eq,
+                   @PathVariable String Id_datos_en,
+                   @PathVariable String Id_programa,
+                   @PathVariable String Id_configuracion,
+                   @PathVariable String Id_mantenimiento,
+                   @PathVariable String Id_factur,
+                   @PathVariable String Id_vnc,
+                   @PathVariable String Id_agregado){
     
         DAOEquipos u=new DAOEquipos();
-        u.agregarEquipo(new Equipo(1, nombre, asignacion, caracteristica, tipo, 
-                        sucof,comentario, respaldos, contraseña, productkey,
-                        new DatosEquipo(1, modelo, ram, hd, procesador, so, serie, otro, null),
-                        new DatosEnvio(1, null, null, null, correo, null, null),
-                        new  Programa(1, nombre, null), new Configuraciones(1, nombre, null),
-                        new Mantenimiento(1, limpiar, empacar, cargador, etiqueta, null),
-                        new Factur(1, factura, proveedor, precio, null), new Vnc(1, nombre, tipo, null),
-                        new Agregado(1, nombre, null)));
+        u.agregarEquipo(new Equipo(1, nombre, asignacion, caracteristica, tipo, sucof, comentario, respaldos, contraseña, productkey, null, null, null, null, null, null, null, null));
                 return "El equipo se agrego con exito";
   
     }
+    
     
     @RequestMapping(value="/e", method=RequestMethod.GET, 
             headers={"Accept=application/json"})
