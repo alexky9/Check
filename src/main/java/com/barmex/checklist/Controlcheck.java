@@ -20,7 +20,7 @@ public class Controlcheck {
     
     public @ResponseBody
          
-    String insertar(@PathVariable String nombre,
+    String insertA(@PathVariable String nombre,
                    @PathVariable String asignacion,
                    @PathVariable String caracteristica,
                    @PathVariable String tipo,
@@ -29,14 +29,14 @@ public class Controlcheck {
                    @PathVariable String respaldos,
                    @PathVariable String contraseña,
                    @PathVariable String productkey,
-                   @PathVariable String Id_datos_eq,
-                   @PathVariable String Id_datos_en,
-                   @PathVariable String Id_programa,
-                   @PathVariable String Id_configuracion,
-                   @PathVariable String Id_mantenimiento,
-                   @PathVariable String Id_factur,
-                   @PathVariable String Id_vnc,
-                   @PathVariable String Id_agregado){
+                   @PathVariable Integer Id_datos_eq,
+                   @PathVariable Integer Id_datos_en,
+                   @PathVariable Integer Id_programa,
+                   @PathVariable Integer Id_configuracion,
+                   @PathVariable Integer Id_mantenimiento,
+                   @PathVariable Integer Id_factur,
+                   @PathVariable Integer Id_vnc,
+                   @PathVariable Integer Id_agregado){
     
         DAOEquipos u=new DAOEquipos();
         u.agregarEquipo(new Equipo(1, nombre, asignacion, caracteristica, tipo, sucof, comentario, respaldos, contraseña, productkey, null, null, null, null, null, null, null, null));
@@ -44,7 +44,89 @@ public class Controlcheck {
   
     }
     
+    String InsertB(@PathVariable Integer Id_datos_eq,
+                   @PathVariable String nombre,
+                   @PathVariable String modelo,
+                   @PathVariable String ram,
+                   @PathVariable String hd,
+                   @PathVariable String procesador,
+                   @PathVariable String so,
+                   @PathVariable String serie,
+                   @PathVariable String otro){
+        
+        DAODEquipo de=new DAODEquipo();
+        de.agregarDEquip(new DatosEquipo(1, modelo, ram, hd, procesador, so, serie, otro, null));
+                return "El equipo se agrego con exito";
+    }
     
+        String insertC(@PathVariable Integer Id_datos_en,
+                       @PathVariable String fecha_llegada,
+                       @PathVariable String fecha_envio,
+                       @PathVariable String R,
+                       @PathVariable String correo,
+                       @PathVariable String registro){
+            
+        DAODEnvio e=new DAODEnvio();
+          e.agregarDEnvio(new DatosEnvio(1, null, null, null, correo, null, null));
+                return "El equipo se agrego con exito";
+    }    
+        
+        String insertD(@PathVariable Integer Id_programa,
+                       @PathVariable String nombre){
+            
+            DAOPrograma p= new DAOPrograma();
+            p.agregarProg(new Programa(1, nombre, null));
+            return "El equipo se agrego con exito";
+        }
+        
+        String insertE(@PathVariable Integer Id_programa,
+                       @PathVariable String nombre){
+            
+            DAOConfiguraciones c=new DAOConfiguraciones();
+            c.agregarConfiguracion(new Configuraciones(1, nombre, null));
+                return"El equipo se agrego con exito";
+        
+        }
+        
+        String insertF(@PathVariable Integer id_mantenimiento,
+                       @PathVariable String limpiar,
+                       @PathVariable String empacar,
+                       @PathVariable String cargador,
+                       @PathVariable String etiqueta){
+            
+            DAOMant m=new DAOMant();
+            m.agregarManto(new Mantenimiento(1, limpiar, empacar, cargador, etiqueta, null));
+            return "El equipo se agrego con exito";
+            
+        }
+        
+        String insertG(@PathVariable Integer Id_factur,
+                       @PathVariable String factura,
+                       @PathVariable String Proveedor,
+                       @PathVariable float Precio){
+            
+            DAOFactur f= new DAOFactur();
+            f.agregarFactur(new Factur(1, factura, Proveedor, Proveedor, null));
+            return "El equipo se agrego con exito";
+        }
+        
+        String insertH(@PathVariable Integer Id_vnc,
+                       @PathVariable String nombre,
+                       @PathVariable String tipo){
+            
+            DAOVnc v= new DAOVnc();
+            v.agregarVnc(new Vnc(1, nombre, tipo, null));
+            return "El equipo se agrego con exito";
+        }
+        
+        String insertI(@PathVariable Integer Id_agregado,
+                       @PathVariable String nombre){
+            
+            DAOAgregado a= new DAOAgregado();
+            a.agregarAgregado(new Agregado(1, nombre, null));
+                return"El equipo se agrego con exito";
+        }
+        
     @RequestMapping(value="/e", method=RequestMethod.GET, 
             headers={"Accept=application/json"})
     public @ResponseBody String buscartod()throws Exception{
