@@ -2,6 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link href="../Documents/NetBeansProjects/CheckList/src/main/webapp/path/to/multiselect.css" media="screen" rel="stylesheet" type="text/css">
 <style type="text/css">
 .s {
@@ -166,10 +169,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
         <th scope="row">&nbsp;</th>
         <td>Nombre del equipo:</td>
         <td colspan="3"><label for="Nombre"></label>
-        <input type="text" name="Nombre" id="Nombre" /></td>
+        <input type="text" name="Nombre" id="nombre" /></td>
         <td>&nbsp;</td>
         <td>Maquina tipo:</td>
-        <td width="104"><select name="Tipo" id="Tipo">
+        <td width="104"><select name="tipo" id="tipo">
           <option value="Escritorio">Escritorio</option>
           <option value="Laptop">Laptop</option>
           <option value="Server">Server</option>
@@ -177,7 +180,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
         </select></td>
         <td width="177">
         </form>
-        <label for="Tipo"></label></td>
+        <label for="tipo"></label></td>
       </tr>
       <tr>
         <th scope="row">&nbsp;</th>
@@ -189,14 +192,14 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
       <tr>
         <th scope="row">&nbsp;</th>
         <td>Reasignado a:</td>
-        <td colspan="4"><input type="text" name="Asignado" id="Asignado" /></td>
+        <td colspan="4"><input type="text" name="asignado" id="asignado" /></td>
         <td>Caracteristica:</td>
-        <td><select name="Caracter" id="Caracter">
+        <td><select name="caracter" id="caracter">
           <option value="Nueva">Nueva</option>
           <option value="Reparacion">Reparacion</option>
           <option value="Reasignada">Reasignada</option>
         </select></td>
-        <td colspan="2"><label for="Caracter"></label></td>
+        <td colspan="2"><label for="caracter"></label></td>
       </tr>
       <tr>
         <th scope="row">&nbsp;</th>
@@ -209,7 +212,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
         <td>Sucursal/Oficina:</td>
         <td colspan="4"><input name="sucof" type="text" id="sucof" size="40" /></td>
         <td colspan="3">Product Key
-        <input name="Product key" type="text" id="Product key" size="35" /></td>
+        <input name="Product key" type="text" id="productkey" size="35" /></td>
       </tr>
       <tr>
         <th scope="row">&nbsp;</th>
@@ -220,11 +223,11 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
       <tr>
         <th scope="row">&nbsp;</th>
         <td colspan="4">Factura: 
-        <input type="text" name="Id_factura" id="Id_factura" /></td>
+        <input type="text" name="Id_factura" id="id_factura" /></td>
         <td colspan="2">Proveedor:
-        <input type="text" name="Proveedor" id="Proveedor" /></td>
+        <input type="text" name="Proveedor" id="proveedor" /></td>
         <td colspan="2">Precio: 
-        <input type="text" name="Precio" id="Precio" /></td>
+        <input type="text" name="Precio" id="precio" /></td>
       </tr>
       <tr>
         <th scope="row">&nbsp;</th>
@@ -237,21 +240,21 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
         <td colspan="9"><fieldset>
           <legend>Datos de Equipo: </legend>
           <p>Modelo:                    
-            <input type="text" name="Modelo" id="Modelo" /> 
+            <input type="text" name="Modelo" id="modelo" /> 
              Disco Duro:   
-             <input type="text" name="HD" id="HD" />
+             <input type="text" name="HD" id="hd" />
     Memoria RAM:
-    <input type="text" name="RAM" id="RAM" />
+    <input type="text" name="RAM" id="ram" />
           </p>
           <p>Procesador:
-<input type="text" name="Procesador" id="Procesador" />
+<input type="text" name="Procesador" id="procesador" />
           Sistema Operativo: 
-            <input type="text" name="SO" id="SO" />
+            <input type="text" name="SO" id="so" />
           No. Serie
-           <input type="text" name="Serie" id="Serie" />
+           <input type="text" name="Serie" id="serie" />
           </p>
           <p>Otro: 
-            <input type="text" name="Otro_dat" id="Otro_dat" />
+            <input type="text" name="Otro_dat" id="otro_dat" />
           </p>
         </fieldset></td>
       </tr>
@@ -266,20 +269,20 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
         <td colspan="9"><fieldset>
           <legend>Datos de Envio:</legend>
           <p>Fecha de llegada:
-            <input type="text" name="Fecha_ll1" id="Fecha_ll1" />
+            <input type="text" name="Fecha_ll1" id="fecha_ll1" />
             Fecha de envio:
-            <input type="text" name="Fecha_en" id="Fecha_en" />
+            <input type="text" name="Fecha_en" id="fecha_en" />
           </p>
           <p>Fecha de recepcion:
-            <input type="text" name="Fecha_ll2" id="Fecha_ll2" /> 
+            <input type="text" name="Fecha_ll2" id="fecha_ll2" /> 
             Se envio correo:
-            <select name="Correo" id="Correo">
+            <select name="Correo" id="correo">
               <option value="Si">Si</option>
               <option value="No">No</option>
             </select>
           </p>
           <p>Registrado en inventario:
-            <input type="text" name="Reginv" id="Reginv" />
+            <input type="text" name="Reginv" id="reginv" />
           </p>
         </fieldset></td>
       </tr>
@@ -392,13 +395,13 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
                 <option value="Tight VNC">Tight VNC</option>
                 </optgroup>
               </select></td>
-              <td colspan="4"><input type="checkbox" name="Cliente" id="Cliente" />
+              <td colspan="4"><input type="checkbox" name="Cliente" id="cliente" />
                 Cliente</td>
               <td>&nbsp;</td>
               <td colspan="4">&nbsp;</td>
             </tr>
             <tr>
-              <td colspan="2"><input type="checkbox" name="Server" id="Server" />
+              <td colspan="2"><input type="checkbox" name="Server" id="server" />
                 Server</td>
               <td>&nbsp;</td>
               <td><select name="Antivirus">
@@ -557,22 +560,22 @@ Actualizacion y parches</td>
           <table width="731" border="0">
             <tr>
               <th width="158" scope="row">Limpiar
-                <select name="Limpiar2" id="Limpiar2">
+                <select name="limpiar2" id="limpiar2">
                   <option value="Si">Si</option>
                   <option value="No">No</option>
                 </select></th>
               <td width="158">Empacar
-                <select name="Empacar" id="Empacar">
+                <select name="empacar" id="empacar">
                   <option value="Si">Si</option>
                   <option value="No">No</option>
                 </select></td>
               <td width="191">Checar cargador
-                <select name="Checar cargador" id="Checar cargador">
+                <select name="checar cargador" id="checar cargador">
                   <option value="Si">Si</option>
                   <option value="No">No</option>
                 </select></td>
               <td width="206">Etiquetar garantias
-                <select name="Etiquetar garantias" id="Etiquetar garantias">
+                <select name="etiquetar garantias" id="etiquetar garantias">
                   <option value="Si">Si</option>
                   <option value="No">No</option>
                 </select></td>
@@ -591,10 +594,10 @@ Actualizacion y parches</td>
         <td colspan="9"><fieldset>
           <legend>Archivos:</legend>
           <p>Respaldos: 
-            <input name="Respaldos" type="text" id="Respaldos" size="100" />
+            <input name="Respaldos" type="text" id="respaldos" size="100" />
           </p>
           <p>Contraseñas:
-            <input name="Contraseña" type="text" id="Contraseña" size="100" />
+            <input name="Contraseña" type="text" id="contraseña" size="100" />
           </p>
         </fieldset></td>
       </tr>
@@ -607,7 +610,7 @@ Actualizacion y parches</td>
       <tr>
         <th scope="row">&nbsp;</th>
         <td colspan="9">Comentario:
-        <input name="Comentario" type="text" id="Comentario" size="99" /></td>
+        <input name="Comentario" type="text" id="comentario" size="99" /></td>
       </tr>
       <tr>
         <th scope="row">&nbsp;</th>
@@ -631,52 +634,52 @@ Actualizacion y parches</td>
 </div>
 </div>
 <script>
-$("#Guardar").click(function(){
+     $(document).ready(function(){
+         
+        $("#Guardar").click(function(){
 
-    //var nombre=$("#nombre").val();
-    //var asignacion=$("#asignacion").val();
-    //var caracteristica=$("#caracter").val();
-    //var tipo=$("#tipo").val();
-    //var sucof=$("#sucof").val();
-    //var comentario=$("#comentario").val();
-    //var respaldos=$("#Respaldos").val();
-    //var contraseña=$("#Contraseña").val();
-    //var limpiar=$("#Limpiar2").val();
-    //ar empacar=$("#empacar").val();
-    //var cargador=$("#Checar cargador").val();
-    //var etiqueta=$("#Etiquetar garantias").val();
-    //var modelo=$("#Modelo").val();
-    //var ram=$("#RAM").val();
-    //var hd=$("#HD").val();
-    //var procesador=$("#procesador").val();
-    //var so=$("SO").val();
-    //var serie=$("#Serie").val();
-    //var llegada=$("#Fecha_ll1").val();
-    //var envio=$("#Fecha_en").val();
-    //var recibo=$("#Fecha_ll2").val();
-    //var correo_en=$("#Correo").val();
-    //var inventario=$("#Reg inv").val();
-    //var programa=$("#programa").val();w
-    //var configuracion=$("#configuracion").val();
-    //var factura=$("#nombre_fac").val();
-    //var Proveedor=$("#proveedor").val();
-    //var Precio=$("#precio").val();
-    
-    $.ajax({
-        
-        method:'POST',
-        url:"http://localhost:8095/CheckList/agregar/equipo/",
-        
-        success:function(valor){
-           
-            alert(valor);
-            
-        },
-        failure:function(e){
-            alert(e);
-        }
-    });
-});          
-  </script>
+ $.ajax({
+     
+            data:{
+                        'nombre':$("#nombre").val(),
+                        'asignacion':$("#asignacion").val(),
+                        'caracteristica':$("#caracter").val(),
+                        'tipo':$("#tipo").val(),
+                        'sucof':$("#sucof").val(),
+                        'comentario':$("#comentario").val(),
+                        'respaldos':$("#respaldos").val(),
+                        'contraseña':$("#contraseña").val(),
+                        'productkey':$("#productkey").val(),
+                        'limpiar':$("#limpiar2").val(),
+                        'empacar':$("#empacar").val(),
+                        'cargador':$("#checar cargador").val(),
+                        'etiqueta':$("#etiquetar garantias").val(),
+                        'modelo':$("#modelo").val(),
+                        'ram':$("#ram").val(),
+                        'hd':$("#hd").val(),
+                        'procesador':$("#procesador").val(),
+                        'so':$("SO").val(),
+                        'serie':$("#serie").val(),
+                        'llegada':$("#fecha_ll1").val(),
+                        'envio':$("#fecha_en").val(),
+                        'recibo':$("#fecha_ll2").val(),
+                        'correo_en':$("#correo").val(),
+                        'inventario':$("#reginv").val(),
+                        'programa':$("#programa").val(),
+                        'configuracion':$("#configuracion").val(),
+                        'factura':$("#nombre_fac").val(),
+                        'Proveedor':$("#proveedor").val(),
+                        'Precio':$("#precio").val()
+                    },
+                    
+                method:'POST',
+                url:"http://localhost:8095/CheckList/agregar/equipo/",
+                    success:function(){
+                         alert("Funciona");  
+               }
+              });
+             });
+            });
+        </script>
 </body>
 </html>
