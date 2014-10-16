@@ -1,5 +1,5 @@
 
-package com.barmex.checklist;
+package barmex;
 
 import java.io.Serializable;
 import java.util.List;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.barmex.checklist;
+package barmex;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,41 +24,41 @@ import javax.validation.constraints.Size;
  * @author Alejandro Pacheco
  */
 @Entity
-@Table(name = "configuraciones")
+@Table(name = "agregado")
 @NamedQueries({
-    @NamedQuery(name = "Configuraciones.findAll", query = "SELECT c FROM Configuraciones c")})
-public class Configuraciones implements Serializable {
+    @NamedQuery(name = "Agregado.findAll", query = "SELECT a FROM Agregado a")})
+public class Agregado implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "Id_configuracion")
-    private Integer idconfiguracion;
+    @Column(name = "Id_agregado")
+    private Integer idagregado;
     @Size(max = 30)
     @Column(name = "nombre")
     private String nombre;
-    @OneToMany(mappedBy = "configuraciones")
+    @OneToMany(mappedBy = "agregado")
     private List<Equipo> equipoList;
 
-    public Configuraciones() {
+    public Agregado() {
     }
 
-    public Configuraciones(Integer idconfiguracion) {
-        this.idconfiguracion = idconfiguracion;
-    }
-
-    public Configuraciones(Integer idconfiguracion, String nombre, List<Equipo> equipoList) {
-        this.idconfiguracion = idconfiguracion;
+    public Agregado(Integer idagregado, String nombre, List<Equipo> equipoList) {
+        this.idagregado = idagregado;
         this.nombre = nombre;
         this.equipoList = equipoList;
     }
 
-    public Integer getIdconfiguracion() {
-        return idconfiguracion;
+    public Agregado(Integer idagregado) {
+        this.idagregado = idagregado;
     }
 
-    public void setIdconfiguracion(Integer idconfiguracion) {
-        this.idconfiguracion = idconfiguracion;
+    public Integer getIdagregado() {
+        return idagregado;
+    }
+
+    public void setIdagregado(Integer idagregado) {
+        this.idagregado = idagregado;
     }
 
     public String getNombre() {
@@ -80,18 +80,18 @@ public class Configuraciones implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idconfiguracion != null ? idconfiguracion.hashCode() : 0);
+        hash += (idagregado != null ? idagregado.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Configuraciones)) {
+        if (!(object instanceof Agregado)) {
             return false;
         }
-        Configuraciones other = (Configuraciones) object;
-        if ((this.idconfiguracion == null && other.idconfiguracion != null) || (this.idconfiguracion != null && !this.idconfiguracion.equals(other.idconfiguracion))) {
+        Agregado other = (Agregado) object;
+        if ((this.idagregado == null && other.idagregado != null) || (this.idagregado != null && !this.idagregado.equals(other.idagregado))) {
             return false;
         }
         return true;
@@ -99,7 +99,7 @@ public class Configuraciones implements Serializable {
 
     @Override
     public String toString() {
-        return "com.barmex.checklist.Configuraciones[ idconfiguracion=" + idconfiguracion + " ]";
+        return "com.barmex.checklist.Agregado[ idagregado=" + idagregado + " ]";
     }
     
 }

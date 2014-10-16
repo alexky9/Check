@@ -1,13 +1,13 @@
 
-package com.barmex.checklist;
+package barmex;
 
 import org.hibernate.Query;
 
 public class DAOMant extends DAO{
     
-    public void agregarManto(Mantenimiento mantenimiento) {
+    public void agregarManto(Mantenimiento m) {
     begin();
-    getSession().save(mantenimiento);
+    getSession().save(m);
     commit();
     close();
     }

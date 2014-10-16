@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.barmex.checklist;
+
+package barmex;
 
 import java.io.Serializable;
 import java.util.List;
@@ -19,46 +15,42 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-/**
- *
- * @author Alejandro Pacheco
- */
 @Entity
-@Table(name = "agregado")
+@Table(name = "programa")
 @NamedQueries({
-    @NamedQuery(name = "Agregado.findAll", query = "SELECT a FROM Agregado a")})
-public class Agregado implements Serializable {
+    @NamedQuery(name = "Programa.findAll", query = "SELECT p FROM Programa p")})
+public class Programa implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "Id_agregado")
-    private Integer idagregado;
+    @Column(name = "Id_programa")
+    private Integer idprograma;
     @Size(max = 30)
     @Column(name = "nombre")
     private String nombre;
-    @OneToMany(mappedBy = "agregado")
+    @OneToMany(mappedBy = "programa")
     private List<Equipo> equipoList;
 
-    public Agregado() {
+    public Programa() {
     }
 
-    public Agregado(Integer idagregado, String nombre, List<Equipo> equipoList) {
-        this.idagregado = idagregado;
+    public Programa(Integer idprograma, String nombre, List<Equipo> equipoList) {
+        this.idprograma = idprograma;
         this.nombre = nombre;
         this.equipoList = equipoList;
     }
 
-    public Agregado(Integer idagregado) {
-        this.idagregado = idagregado;
+    public Programa(Integer idprograma) {
+        this.idprograma = idprograma;
     }
 
-    public Integer getIdagregado() {
-        return idagregado;
+    public Integer getIdprograma() {
+        return idprograma;
     }
 
-    public void setIdagregado(Integer idagregado) {
-        this.idagregado = idagregado;
+    public void setIdprograma(Integer idprograma) {
+        this.idprograma = idprograma;
     }
 
     public String getNombre() {
@@ -80,18 +72,18 @@ public class Agregado implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idagregado != null ? idagregado.hashCode() : 0);
+        hash += (idprograma != null ? idprograma.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Agregado)) {
+        if (!(object instanceof Programa)) {
             return false;
         }
-        Agregado other = (Agregado) object;
-        if ((this.idagregado == null && other.idagregado != null) || (this.idagregado != null && !this.idagregado.equals(other.idagregado))) {
+        Programa other = (Programa) object;
+        if ((this.idprograma == null && other.idprograma != null) || (this.idprograma != null && !this.idprograma.equals(other.idprograma))) {
             return false;
         }
         return true;
@@ -99,7 +91,7 @@ public class Agregado implements Serializable {
 
     @Override
     public String toString() {
-        return "com.barmex.checklist.Agregado[ idagregado=" + idagregado + " ]";
+        return "com.barmex.checklist.Programa[ idprograma=" + idprograma + " ]";
     }
     
 }

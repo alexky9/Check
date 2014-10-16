@@ -1,5 +1,5 @@
 
-package com.barmex.checklist;
+package barmex;
 
 import java.util.Collections;
 import java.util.List;
@@ -62,7 +62,7 @@ public class Controlcheck {
         String insertC(@PathVariable Integer Id_datos_en,
                        @PathVariable String fecha_llegada,
                        @PathVariable String fecha_envio,
-                       @PathVariable String R,
+                       @PathVariable String Recepcion,
                        @PathVariable String correo,
                        @PathVariable String registro){
             

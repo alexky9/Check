@@ -1,5 +1,5 @@
 
-package com.barmex.checklist;
+package barmex;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -259,7 +259,7 @@ public class Equipo implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+  
         if (!(object instanceof Equipo)) {
             return false;
         }

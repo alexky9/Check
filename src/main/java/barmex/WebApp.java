@@ -1,4 +1,4 @@
-package com.barmex.checklist;
+package barmex;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

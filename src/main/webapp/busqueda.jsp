@@ -157,22 +157,34 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
   </table>
 </div>
     <script>
-        $("#Buscar").click(function(){
-            $.ajax({
         
-        method:'POST',
-        url:"http://localhost:8095/CheckList/agregar/equipo/",
-        
-        success:function(valor){
-           
-            alert(e);
-            
-        },
-        failure:function(e){
-            alert(e);
-        }
-    });
-        }
+      function recuperarNombre(nombre)
+{
+    try
+    {
+       
+        var datos = "Id=1&nombre=" + nombre.id;
+        $.ajax(
+            {
+              
+                type: "get",
+               
+                url: "http://localhost:8095/CheckList/agregar/equipo",
+                
+                data: datos,
+               
+                context : { "nombre" : nombre },
+               
+                error: callback_error,
+          
+                success: recuperarAlumnos_callback
+            });
+    }
+    catch(ex)
+    {
+        alert(ex.description);
+    }
+}
     </script>
 </body>
 </html>

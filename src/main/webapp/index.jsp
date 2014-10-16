@@ -169,7 +169,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
         <th scope="row">&nbsp;</th>
         <td>Nombre del equipo:</td>
         <td colspan="3"><label for="Nombre"></label>
-        <input type="text" name="Nombre" id="nombre" /></td>
+        <input type="text" name="nombre" id="nombre" /></td>
         <td>&nbsp;</td>
         <td>Maquina tipo:</td>
         <td width="104"><select name="tipo" id="tipo">
@@ -639,43 +639,47 @@ Actualizacion y parches</td>
         $("#Guardar").click(function(){
 
  $.ajax({
-     
+      
+                url:"http://localhost:8095/CheckList/",
+                method:'POST',
             data:{
-                        'nombre':$("#nombre").val(),
-                        'asignacion':$("#asignacion").val(),
-                        'caracteristica':$("#caracter").val(),
-                        'tipo':$("#tipo").val(),
-                        'sucof':$("#sucof").val(),
-                        'comentario':$("#comentario").val(),
-                        'respaldos':$("#respaldos").val(),
-                        'contraseña':$("#contraseña").val(),
-                        'productkey':$("#productkey").val(),
-                        'limpiar':$("#limpiar2").val(),
-                        'empacar':$("#empacar").val(),
-                        'cargador':$("#checar cargador").val(),
-                        'etiqueta':$("#etiquetar garantias").val(),
-                        'modelo':$("#modelo").val(),
-                        'ram':$("#ram").val(),
-                        'hd':$("#hd").val(),
-                        'procesador':$("#procesador").val(),
-                        'so':$("SO").val(),
-                        'serie':$("#serie").val(),
-                        'llegada':$("#fecha_ll1").val(),
-                        'envio':$("#fecha_en").val(),
-                        'recibo':$("#fecha_ll2").val(),
-                        'correo_en':$("#correo").val(),
-                        'inventario':$("#reginv").val(),
-                        'programa':$("#programa").val(),
-                        'configuracion':$("#configuracion").val(),
-                        'factura':$("#nombre_fac").val(),
-                        'Proveedor':$("#proveedor").val(),
-                        'Precio':$("#precio").val()
+                        nombre:$("#nombre").val(),
+                        asignacion:$("#asignacion").val(),
+                        caracteristica:$("#caracteristica").val(),
+                        tipo:$("#tipo").val(),
+                        sucof:$("#sucof").val(),
+                        comentario:$("#comentario").val(),
+                        respaldos:$("#respaldos").val(),
+                        contraseña:$("#contraseña").val(),
+                        productkey:$("#productkey").val(),
+                        limpiar:$("#limpiar2").val(),
+                        empacar:$("#empacar").val(),
+                        cargador:$("#checar cargador").val(),
+                        etiqueta:$("#etiquetar garantias").val(),
+                        modelo:$("#modelo").val(),
+                        ram:$("#ram").val(),
+                        hd:$("#hd").val(),
+                        procesador:$("#procesador").val(),
+                        so:$("SO").val(),
+                        serie:$("#serie").val(),
+                        llegada:$("#fecha_ll1").val(),
+                        envio:$("#fecha_en").val(),
+                        recibo:$("#fecha_ll2").val(),
+                        correo_en:$("#correo").val(),
+                        inventario:$("#reginv").val(),
+                        programa:$("#programa").val(),
+                        configuracion:$("#configuracion").val(),
+                        factura:$("#nombre_fac").val(),
+                        Proveedor:$("#proveedor").val(),
+                        Precio:$("#precio").val()
                     },
                     
-                method:'POST',
-                url:"http://localhost:8095/CheckList/agregar/equipo/",
+               
                     success:function(){
-                         alert("Funciona");  
+                         alert("Se guardaron los datos con exito");  
+               },
+               error: function (){
+                   alert("No sirve")
                }
               });
              });

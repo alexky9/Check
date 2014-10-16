@@ -1,5 +1,5 @@
 
-package com.barmex.checklist;
+package barmex;
 
 import org.hibernate.Query;
 

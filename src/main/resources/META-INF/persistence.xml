@@ -2,15 +2,15 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="com.barmex_CheckList_war_1.0PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <class>com.barmex.checklist.Equipo</class>
-    <class>com.barmex.checklist.Vnc</class>
-    <class>com.barmex.checklist.Factur</class>
-    <class>com.barmex.checklist.DatosEquipo</class>
-    <class>com.barmex.checklist.DatosEnvio</class>
-    <class>com.barmex.checklist.Mantenimiento</class>
-    <class>com.barmex.checklist.Agregado</class>
-    <class>com.barmex.checklist.Programa</class>
-    <class>com.barmex.checklist.Configuraciones</class>
+    <class>barmex.Mantenimiento</class>
+    <class>barmex.Vnc</class>
+    <class>barmex.DatosEnvio</class>
+    <class>barmex.Agregado</class>
+    <class>barmex.DatosEquipo</class>
+    <class>barmex.Programa</class>
+    <class>barmex.Configuraciones</class>
+    <class>barmex.Equipo</class>
+    <class>barmex.Factur</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.10.250:3306/barmex_1"/>

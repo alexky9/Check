@@ -1,5 +1,9 @@
-
-package com.barmex.checklist;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package barmex;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,42 +19,46 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+/**
+ *
+ * @author Alejandro Pacheco
+ */
 @Entity
-@Table(name = "programa")
+@Table(name = "configuraciones")
 @NamedQueries({
-    @NamedQuery(name = "Programa.findAll", query = "SELECT p FROM Programa p")})
-public class Programa implements Serializable {
+    @NamedQuery(name = "Configuraciones.findAll", query = "SELECT c FROM Configuraciones c")})
+public class Configuraciones implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "Id_programa")
-    private Integer idprograma;
+    @Column(name = "Id_configuracion")
+    private Integer idconfiguracion;
     @Size(max = 30)
     @Column(name = "nombre")
     private String nombre;
-    @OneToMany(mappedBy = "programa")
+    @OneToMany(mappedBy = "configuraciones")
     private List<Equipo> equipoList;
 
-    public Programa() {
+    public Configuraciones() {
     }
 
-    public Programa(Integer idprograma, String nombre, List<Equipo> equipoList) {
-        this.idprograma = idprograma;
+    public Configuraciones(Integer idconfiguracion) {
+        this.idconfiguracion = idconfiguracion;
+    }
+
+    public Configuraciones(Integer idconfiguracion, String nombre, List<Equipo> equipoList) {
+        this.idconfiguracion = idconfiguracion;
         this.nombre = nombre;
         this.equipoList = equipoList;
     }
 
-    public Programa(Integer idprograma) {
-        this.idprograma = idprograma;
+    public Integer getIdconfiguracion() {
+        return idconfiguracion;
     }
 
-    public Integer getIdprograma() {
-        return idprograma;
-    }
-
-    public void setIdprograma(Integer idprograma) {
-        this.idprograma = idprograma;
+    public void setIdconfiguracion(Integer idconfiguracion) {
+        this.idconfiguracion = idconfiguracion;
     }
 
     public String getNombre() {
@@ -72,18 +80,18 @@ public class Programa implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idprograma != null ? idprograma.hashCode() : 0);
+        hash += (idconfiguracion != null ? idconfiguracion.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Programa)) {
+        if (!(object instanceof Configuraciones)) {
             return false;
         }
-        Programa other = (Programa) object;
-        if ((this.idprograma == null && other.idprograma != null) || (this.idprograma != null && !this.idprograma.equals(other.idprograma))) {
+        Configuraciones other = (Configuraciones) object;
+        if ((this.idconfiguracion == null && other.idconfiguracion != null) || (this.idconfiguracion != null && !this.idconfiguracion.equals(other.idconfiguracion))) {
             return false;
         }
         return true;
@@ -91,7 +99,7 @@ public class Programa implements Serializable {
 
     @Override
     public String toString() {
-        return "com.barmex.checklist.Programa[ idprograma=" + idprograma + " ]";
+        return "com.barmex.checklist.Configuraciones[ idconfiguracion=" + idconfiguracion + " ]";
     }
     
 }
