@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/")
-public class Controlcheck {
+public class Controlcheck { 
    
-    @RequestMapping(value="/equipo/", method=RequestMethod.POST, 
+    @RequestMapping(value="/equipo", method=RequestMethod.POST, 
     headers={"Accept=text/html"})
     
     public @ResponseBody

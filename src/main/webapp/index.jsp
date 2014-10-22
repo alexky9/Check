@@ -640,7 +640,7 @@ Actualizacion y parches</td>
 
  $.ajax({
       
-                url:"http://localhost:8095/CheckList/",
+                url:"http://localhost:8095/CheckList/agregar/equipo",
                 method:'POST',
             data:{
                         nombre:$("#nombre").val(),
@@ -679,7 +679,7 @@ Actualizacion y parches</td>
                          alert("Se guardaron los datos con exito");  
                },
                error: function (){
-                   alert("No sirve")
+                   alert("No sirve");
                }
               });
              });

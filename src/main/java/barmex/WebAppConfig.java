@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @EnableWebMvc
 @Configuration
-@ComponentScan("com.barmex.checklist")
+@ComponentScan("barmex")
 public class WebAppConfig extends WebMvcConfigurerAdapter{
 
 }
