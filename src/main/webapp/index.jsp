@@ -1,11 +1,10 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+ <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<link href="../Documents/NetBeansProjects/CheckList/src/main/webapp/path/to/multiselect.css" media="screen" rel="stylesheet" type="text/css">
 <style type="text/css">
 .s {
 	font-family: "Lucida Console", Monaco, monospace;
@@ -679,11 +678,12 @@ Actualizacion y parches</td>
                          alert("Se guardaron los datos con exito");  
                },
                error: function (){
-                   alert("No sirve");
+                   alert("Error HTTP 405 - Request method 'GET' not supported");
                }
               });
              });
             });
         </script>
+    </form>
 </body>
 </html>

@@ -7,14 +7,14 @@
     <property name="hibernate.connection.url">jdbc:mysql://192.168.10.250:3306/barmex_1</property>
     <property name="hibernate.connection.username">barpro</property>
     <property name="hibernate.connection.password">barpro</property>
-    <mapping class="com.barmex.checklist.Equipo"/>
-    <mapping class="com.barmex.checklist.Configuraciones"/>
-    <mapping class="com.barmex.checklist.DatosEnvio"/>
-    <mapping class="com.barmex.checklist.DatosEquipo"/>
-    <mapping class="com.barmex.checklist.Mantenimiento"/>
-    <mapping class="com.barmex.checklist.Programa"/>
-    <mapping class="com.barmex.checklist.Vnc"/>
-    <mapping class="com.barmex.checklist.Factur"/>
-    <mapping class="com.barmex.checklist.Agregado"/>
+    <mapping class="barmex.Equipo"/>
+    <mapping class="barmex.Configuraciones"/>
+    <mapping class="barmex.DatosEnvio"/>
+    <mapping class="barmex.DatosEquipo"/>
+    <mapping class="barmex.Mantenimiento"/>
+    <mapping class="barmex.Programa"/>
+    <mapping class="barmex.Vnc"/>
+    <mapping class="barmex.Factur"/>
+    <mapping class="barmex.Agregado"/>
   </session-factory>
 </hibernate-configuration>
